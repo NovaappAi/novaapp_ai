@@ -3,7 +3,7 @@
 Working Copy
 ============
 
-Welcome to Working Copy, a full-featured Git client for iOS. :birthday:
+Welcome. to Working Copy, a full-featured Git client for iOS. :birthday:
 
 Git is a powerful system and can take some time to master. The same is true for this application and even though you will not need 
 to work with the command-line, some understanding of Git is needed. If you are not confident with the core concepts of Git you should 
