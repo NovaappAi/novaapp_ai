@@ -1,4 +1,4 @@
-<!-- tap Markdown in the upper right corner and switch to Preview -->
+<!--tap Markdown in the upper right corner and switch to Preview -->
 
 Working Copy
 ============
