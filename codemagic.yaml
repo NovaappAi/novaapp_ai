@@ -6,7 +6,8 @@ workflows:
         XCODE_WORKSPACE: "Runner.xcworkspace"
         XCODE_SCHEME: "Runner"
       ios_signing:
-        provisioning_profiles: encrypted_provisioning_profile
+        provisioning_profiles:
+          - encrypted_provisioning_profile
         certificate_url: encrypted_certificate_url
         certificate_password: encrypted_password
     scripts:
