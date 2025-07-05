@@ -1,0 +1,29 @@
+workflows:
+  ios-workflow:
+    name: iOS Build for TestFlight
+    environment:
+      vars:
+        XCODE_WORKSPACE: "Runner.xcworkspace"
+        XCODE_SCHEME: "Runner"
+      ios_signing:
+        provisioning_profiles: encrypted_provisioning_profile
+        certificate_url: encrypted_certificate_url
+        certificate_password: encrypted_password
+    scripts:
+      - name: Install dependencies
+        script: |
+          brew install cocoapods
+          pod install
+      - name: Build IPA
+        script: |
+          xcodebuild -workspace "$XCODE_WORKSPACE" \
+          -scheme "$XCODE_SCHEME" \
+          -sdk iphoneos \
+          -configuration Release \
+          -archivePath $CM_BUILD_DIR/Runner.xcarchive archive
+          xcodebuild -exportArchive \
+          -archivePath $CM_BUILD_DIR/Runner.xcarchive \
+          -exportOptionsPlist ExportOptions.plist \
+          -exportPath $CM_BUILD_DIR
+    artifacts:
+      - build/ios/ipa/*.ipa
